@@ -7,7 +7,7 @@ pipeline{
 				withMaven(maven : 'maven_3_6_3') {
 					sh '''
 						echo "PATH = ${PATH}"
-						mvn clean compile'
+						mvn clean compile
 					'''
 				}
 			}
