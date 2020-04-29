@@ -5,7 +5,7 @@ pipeline{
 		stage ('Compile Stage') {
 			steps{
 				withMaven(maven : 'maven-3.6.3') {
-					sh '''
+					bat '''
 						echo "PATH = ${PATH}"
 						mvn clean compile
 					'''
@@ -17,7 +17,7 @@ pipeline{
 		stage ('Testing Stage') {
 			steps{
 				withMaven(maven : 'maven-3.6.3'){
-					sh 'mvn test'
+					bat 'mvn test'
 				}
 			}
 		}
@@ -25,7 +25,7 @@ pipeline{
 		stage ('Deployment Stage') {
 			steps{
 				withMaven(maven : 'maven-3.6.3'){
-					sh 'mvn deploy'
+					bat 'mvn deploy'
 				}
 			}
 		}
